@@ -1,0 +1,25 @@
+{
+  "name": "rg-cli",
+  "version": "1.0.0",
+  "description": "A React generator CLI tool for generating React components in Typescript",
+  "main": "index.js",
+  "bin": {
+    "rg": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brendanatme/rg-cli.git"
+  },
+  "author": "brendanatme",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brendanatme/rg-cli/issues"
+  },
+  "homepage": "https://github.com/brendanatme/rg-cli#readme",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}

@@ -6,11 +6,11 @@ Inspired by ng-cli - but does so much less.
 
 Currently only generates components.
 
-Typscript-compatible only
+Typscript-compatible only.
 
 ## Why
 
-So we quickly bang out React components that follow best practices off the bat, and create a clean folder structure -- especially useful in large projects
+So we can quickly bang out React components that follow best practices off the bat, and create a clean folder structure -- especially useful in large projects
 
 ## Requirements
 
@@ -33,19 +33,19 @@ When you generate a component, a component folder will be created at ./src/compo
 
 ## Changing the Output Directory
 
-You can change the output directory by passing it in the flag --component-dir
+You can change the output directory by passing it in the `-d` or `--dir` flag
 
-For example: `rg g c text-input --component-dir="/my/favourite/components"`
+For example: `rg g c text-input --dir="/my/favourite/components"`
 
 ## Generated Folder Structure
 
 The component folder looks contains these files:
 
-- my-component-name.component.scss
-- my-component-name.component.tsx
-- my-component-name.container.tsx
-- my-component-name.test.tsx
-- index.ts
+- `my-component-name.component.scss`
+- `my-component-name.component.tsx`
+- `my-component-name.container.tsx`
+- `my-component-name.test.tsx`
+- `index.ts`
 
 ## Importing Your Generated Component
 
