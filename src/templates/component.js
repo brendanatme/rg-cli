@@ -1,6 +1,9 @@
 const { ClassCase } = require('../helpers');
 
-module.exports = (name) => `import * as React from 'react';
+module.exports = (name) => `/**
+ * ${name}.component
+ */
+import * as React from 'react';
 import './${name}.component.scss';
 
 export interface I${ClassCase(name)}Props {

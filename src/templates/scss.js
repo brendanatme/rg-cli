@@ -1,3 +1,6 @@
-module.exports = (name) => `.${name} {
+module.exports = (name) => `//
+// ${name}
+//
+.${name} {
   
 }`;
