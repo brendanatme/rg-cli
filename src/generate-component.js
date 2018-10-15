@@ -26,7 +26,7 @@ const {
 } = require('./templates');
 
 const generateComponent = (name, dir) => {
-  console.log('RG-CLI: Generating component...');
+  console.log('rg-cli: Generating component...');
   
   if (!name) {
     console.log('Whoops! please enter a name for your component.');
