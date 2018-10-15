@@ -7,7 +7,8 @@
     "rg": "./index.js"
   },
   "scripts": {
-    "test": "node ./index.js g c --dir ./test"
+    "test": "node ./index.js g c --dir ./test",
+    "release": "node ./scripts/release.js"
   },
   "repository": {
     "type": "git",
