@@ -1,7 +1,7 @@
+#!/usr/bin/env node
+
 /**
  * rg-cli
- * 
- * 
  */
 const argv = require('minimist')(process.argv.slice(2));
 const generateComponent = require('./src/generate-component');
