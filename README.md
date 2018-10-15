@@ -2,7 +2,7 @@
 
 A React generator CLI tool
 
-Inspired by ng-cli - but does so much less.
+Inspired by `ng-cli` -- but does so much less.
 
 Currently only generates components.
 
@@ -19,7 +19,7 @@ So we can quickly bang out React components that follow best practices off the b
 
 ## Installation
 
-npm install -g rg-cli
+`npm install -g rg-cli`
 
 ## Usage
 
@@ -29,11 +29,11 @@ For example: `rg g c text-input`
 
 ## What It Does
 
-When you generate a component, a component folder will be created at ./src/components/[my-component-name], relative to your `pwd`.
+When you generate a component, a component folder will be created at ./src/components/[my-component-name], relative to your `cwd`.
 
 ## Changing the Output Directory
 
-You can change the output directory by passing it in the `-d` or `--dir` flag
+You can change the output directory by passing it in the `--dir` flag
 
 For example: `rg g c text-input --dir="/my/favourite/components"`
 

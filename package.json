@@ -7,7 +7,7 @@
     "rg": "./index.js"
   },
   "scripts": {
-    "test": "node ./index.js g c --dir ./test",
+    "gen": "node ./index.js g c --dir=\"./examples\"",
     "release": "node ./scripts/release.js"
   },
   "repository": {
@@ -22,5 +22,12 @@
   "homepage": "https://github.com/brendanatme/rg-cli#readme",
   "dependencies": {
     "minimist": "^1.2.0"
-  }
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "component",
+    "generator",
+    "cli"
+  ]
 }
