@@ -2,12 +2,12 @@
   "name": "rg-cli",
   "version": "1.0.0",
   "description": "A React generator CLI tool for generating React components in Typescript",
-  "main": "index.js",
+  "main": "./index.js",
   "bin": {
     "rg": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./index.js g c --dir ./test"
   },
   "repository": {
     "type": "git",
