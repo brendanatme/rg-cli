@@ -1,8 +1,8 @@
 const { ClassCase } = require('../helpers');
 
 module.exports = (name) => `/**
-* ${name}.container
-*/
+ * ${name}.container
+ */
 import * as React from 'react';
 import { I${ClassCase(name)}Props, ${ClassCase(name)}Component } from './${name}.component';
 
