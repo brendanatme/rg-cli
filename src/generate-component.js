@@ -25,7 +25,7 @@ const {
   test,
 } = require('./templates');
 
-const generateComponent = (name, dir = '.') => {
+const generateComponent = (name, dir) => {
   console.log('rg-cli: Generating component...');
   
   if (!name) {
@@ -35,7 +35,9 @@ const generateComponent = (name, dir = '.') => {
     process.exit(1);
   }
   
-  const componentsDir = path.resolve(process.cwd(), dir) || path.resolve(process.cwd(), 'src', 'components');
+  const componentsDir = dir
+    ? path.resolve(process.cwd(), dir)
+    : path.resolve(process.cwd(), 'src', 'components');
   const componentDir = path.resolve(componentsDir, name);
   
   console.log(`Making dir... ${componentDir}`);
