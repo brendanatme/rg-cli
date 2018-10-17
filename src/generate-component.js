@@ -35,7 +35,7 @@ const generateComponent = (name, dir) => {
     process.exit(1);
   }
   
-  const componentsDir = dir
+  const componentsDir = dir && dir.length
     ? path.resolve(process.cwd(), dir)
     : path.resolve(process.cwd(), 'src', 'components');
   const componentDir = path.resolve(componentsDir, name);
