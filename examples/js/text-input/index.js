@@ -1,1 +1,2 @@
-export default from './text-input.container';
+import TextInput from './text-input.container';
+export default TextInput;
