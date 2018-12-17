@@ -15,4 +15,4 @@ if (arg1 !== 'g' || arg2 !== 'c') {
   process.exit(1);
 }
 
-generateComponent(name, argv.dir);
+generateComponent(name, argv.ts, argv.dir);

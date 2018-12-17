@@ -1,13 +1,4 @@
-const component = require('./component');
-const container = require('./container');
-const mod = require('./module');
-const scss = require('./scss');
-const test = require('./test');
+const js = require('./js');
+const ts = require('./ts');
 
-module.exports = {
-  component,
-  container,
-  mod,
-  scss,
-  test,
-};
+module.exports = { js, ts };

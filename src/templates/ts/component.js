@@ -1,4 +1,4 @@
-const { ClassCase } = require('../helpers');
+const { ClassCase } = require('../../helpers');
 
 module.exports = (name) => `/**
  * ${name}.component

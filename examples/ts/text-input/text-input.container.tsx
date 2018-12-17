@@ -1,3 +1,6 @@
+/**
+ * text-input.container
+ */
 import * as React from 'react';
 import { ITextInputProps, TextInputComponent } from './text-input.component';
 

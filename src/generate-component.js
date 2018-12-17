@@ -5,11 +5,11 @@
  * or, more specifically, a folder with the prerequisite files to make a component:
  * 
  * mkdir [dir]/[name]/
- * touch [dir]/[name]/index.ts
- * touch [dir]/[name]/[name].container.tsx
- * touch [dir]/[name]/[name].component.tsx
+ * touch [dir]/[name]/index.${ext}
+ * touch [dir]/[name]/[name].container.${ext}x
+ * touch [dir]/[name]/[name].component.${ext}x
  * touch [dir]/[name]/[name].component.scss
- * touch [dir]/[name]/[name].spec.tsx
+ * touch [dir]/[name]/[name].spec.${ext}x
  * 
  * usage:
  * rg g c [name]
@@ -17,15 +17,12 @@
 const path = require('path');
 const { execSync } = require('child_process');
 const { ClassCase } = require('./helpers');
-const {
-  component,
-  container,
-  mod,
-  scss,
-  test,
-} = require('./templates');
+const templates = require('./templates');
 
-const generateComponent = (name, dir) => {
+const generateComponent = (name, isTS, dir) => {
+  const ext = isTS ? 'ts' : 'js';
+  const render = templates[ext];
+
   console.log('rg-cli: Generating component...');
   
   if (!name) {
@@ -44,24 +41,28 @@ const generateComponent = (name, dir) => {
   execSync(`mkdir ${componentDir}`);
   
   console.log(`making ${name}.component.scss...`);
-  execSync(`echo "${scss(name)}" >> ${componentDir}/${name}.component.scss`);
+  execSync(`echo "${render.scss(name)}" >> ${componentDir}/${name}.component.scss`);
   
-  console.log(`making ${name}.component.tsx...`);
-  execSync(`echo "${component(name)}" >> ${componentDir}/${name}.component.tsx`);
+  console.log(`making ${name}.component.${ext}x...`);
+  execSync(`echo "${render.component(name)}" >> ${componentDir}/${name}.component.${ext}x`);
   
-  console.log(`making ${name}.container.tsx...`);
-  execSync(`echo "${container(name)}" >> ${componentDir}/${name}.container.tsx`);
+  console.log(`making ${name}.container.${ext}x...`);
+  execSync(`echo "${render.container(name)}" >> ${componentDir}/${name}.container.${ext}x`);
   
-  console.log(`making ${name}.test.tsx...`);
-  execSync(`echo "${test(name)}" >> ${componentDir}/${name}.test.tsx`);
+  // console.log(`making ${name}.test.${ext}x...`);
+  // execSync(`echo "${render.test(name)}" >> ${componentDir}/${name}.test.${ext}x`);
   
-  console.log(`making index.ts...`);
-  execSync(`echo "${mod(name)}" >>  ${componentDir}/index.ts`);
+  console.log(`making index.${ext}...`);
+  execSync(`echo "${render.mod(name)}" >>  ${componentDir}/index.${ext}`);
   
   console.log('success!');
   console.log('include your component like so:');
   console.log('');
-  console.log(`  import { ${ClassCase(name)} } from '~/components/${name}';`);
+  if (ext === 'ts') {
+    console.log(`  import { ${ClassCase(name)} } from '~/components/${name}';`);
+  } else {
+    console.log(`  import ${ClassCase(name)} from '~/components/${name}';`);
+  }
   console.log('');
 };
 

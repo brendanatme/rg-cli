@@ -8,7 +8,8 @@
   },
   "scripts": {
     "gen": "node ./index.js g c",
-    "example": "node ./index.js g c --dir=\"./examples\"",
+    "example:js": "node ./index.js g c --dir=\"./examples/js\"",
+    "example:ts": "node ./index.js g c --ts --dir=\"./examples/ts\"",
     "release": "node ./scripts/release.js"
   },
   "repository": {

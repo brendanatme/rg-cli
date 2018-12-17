@@ -4,9 +4,7 @@ A React generator CLI tool
 
 Inspired by `ng-cli` &mdash; but does so much less.
 
-Currently only generates components.
-
-Typscript-compatible only.
+Generates components (just components for now) in JavaScript or TypeScript.
 
 ## Why
 
@@ -39,19 +37,30 @@ For example: `rg g c text-input --dir="my/favourite/components"`
 
 The `--dir` flag is evaluated relative to your `cwd`.
 
+## Generating TypeScript
+
+The generator generates JavaScript by default; to generate TypeScript, use the `--ts` flag.
+
 ## Generated Folder Structure
 
 The component folder looks contains these files:
 
 - `my-component-name.component.scss`
-- `my-component-name.component.tsx`
-- `my-component-name.container.tsx`
-- `my-component-name.test.tsx`
-- `index.ts`
+- `my-component-name.component.(js|ts)x`
+- `my-component-name.container.(js|ts)x`
+- `index.(js|ts)`
 
 ## Importing Your Generated Component
 
 After generating a component, you can import it like so:
+
+JavaScript:
+
+```javascript
+import MyComponent from '[components-dir]/my-component';
+```
+
+TypeScript:
 
 ```typescript
 import { MyComponent } from '[components-dir]/my-component';

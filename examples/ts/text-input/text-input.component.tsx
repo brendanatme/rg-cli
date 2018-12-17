@@ -1,3 +1,6 @@
+/**
+ * text-input.component
+ */
 import * as React from 'react';
 import './text-input.component.scss';
 
