@@ -14,6 +14,7 @@
  * usage:
  * rg g c [name]
  */
+const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 const { ClassCase } = require('./helpers');
@@ -38,19 +39,19 @@ const generateComponent = (name, options) => {
   execSync(`mkdir ${componentDir}`);
   
   console.log(` Making ${name}.component.scss...`);
-  execSync(`echo "${render.scss(name)}" >> ${componentDir}/${name}.component.scss`);
+  fs.writeFileSync(`${componentDir}/${name}.component.scss`, render.scss(name));
   
   console.log(` Making ${name}.component.${ext}x...`);
-  execSync(`echo "${render.component(name)}" >> ${componentDir}/${name}.component.${ext}x`);
+  fs.writeFileSync(`${componentDir}/${name}.component.${ext}x`, render.component(name));
   
   console.log(` Making ${name}.container.${ext}x...`);
-  execSync(`echo "${render.container(name)}" >> ${componentDir}/${name}.container.${ext}x`);
+  fs.writeFileSync(`${componentDir}/${name}.container.${ext}x`, render.container(name));
   
   // console.log(`making ${name}.test.${ext}x...`);
-  // execSync(`echo "${render.test(name)}" >> ${componentDir}/${name}.test.${ext}x`);
+  // fs.writeFileSync(`echo "${render.test(name)}" >> ${componentDir}/${name}.test.${ext}x`);
   
   console.log(` Making index.${ext}...`);
-  execSync(`echo "${render.mod(name)}" >>  ${componentDir}/index.${ext}`);
+  fs.writeFileSync(`${componentDir}/index.${ext}`, render.mod(name));
   
   console.log(' Success!');
   console.log(' Include your component like so:');
