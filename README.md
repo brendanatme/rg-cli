@@ -1,4 +1,4 @@
-# rg-cli
+# RG-CLI
 
 A React generator CLI tool
 
@@ -17,7 +17,9 @@ So we can quickly bang out React components that follow best practices off the b
 
 ## Installation
 
-`npm install -g rg-cli`
+```
+npm install -g rg-cli
+```
 
 ## Usage
 
@@ -33,13 +35,21 @@ Generates a component folder at ./src/components/[my-component-name], relative t
 
 You can change the output directory by passing it in the `--dir` flag
 
-For example: `rg g c text-input --dir="my/favourite/components"`
+For example:
+
+```
+rg g c --dir="my/favourite/components" text-input
+```
 
 The `--dir` flag is evaluated relative to your `cwd`.
 
 ## Generating TypeScript
 
-The generator generates JavaScript by default; to generate TypeScript, use the `--ts` flag.
+The generator generates JavaScript by default; to generate TypeScript, use the `--type=ts` flag.
+
+```
+rg g c --type=ts text-input
+```
 
 ## Generated Folder Structure
 
@@ -49,6 +59,19 @@ The component folder looks contains these files:
 - `my-component-name.component.(js|ts)x`
 - `my-component-name.container.(js|ts)x`
 - `index.(js|ts)`
+
+## Configuring RG-CLI for your project
+
+RG-CLI will look for an `rg.config.json` file in your current working directory; if it finds it, it will use the options set in their by default. Any command-line arguments passed will take precendence over the config file.
+
+An example `rg.config.json` file:
+
+```json
+{
+  "dir": "client/src/components",
+  "type": "ts"
+}
+```
 
 ## Importing Your Generated Component
 
