@@ -1,15 +1,15 @@
 {
   "name": "rg-cli",
   "version": "2.0.1",
-  "description": "A React generator CLI tool for generating React components in Typescript",
+  "description": "A React generator CLI tool for generating React components in Javascript or Typescript",
   "main": "./index.js",
   "bin": {
     "rg": "./index.js"
   },
   "scripts": {
     "gen": "node ./index.js g c",
-    "example:js": "node ./index.js g c --dir=\"./examples/js\"",
-    "example:ts": "node ./index.js g c --ts --dir=\"./examples/ts\"",
+    "example:js": "node ./index.js g c --type=js --dir=\"./examples/js\"",
+    "example:ts": "node ./index.js g c --type=ts --dir=\"./examples/ts\"",
     "release": "node ./scripts/release.js"
   },
   "repository": {
