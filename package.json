@@ -8,8 +8,10 @@
   },
   "scripts": {
     "gen": "node ./index.js g c",
-    "example:js": "node ./index.js g c --type=js --dir=\"./examples/js\"",
-    "example:ts": "node ./index.js g c --type=ts --dir=\"./examples/ts\"",
+    "gen:js": "node ./index.js g c --type=js --dir=\"./examples/js\"",
+    "gen:ts": "node ./index.js g c --type=ts --dir=\"./examples/ts\"",
+    "gen:css": "node ./index.js g c --type=ts --style=css --dir=\"./examples/css\"",
+    "gen:scss": "node ./index.js g c --type=ts --style=scss --dir=\"./examples/scss\"",
     "release": "node ./scripts/release.js"
   },
   "repository": {

@@ -51,11 +51,15 @@ The generator generates JavaScript by default; to generate TypeScript, use the `
 rg g c --type=ts text-input
 ```
 
+## Generating Sass
+
+The generator generates CSS stylesheets by default; to generate Scss, use the `--style=scss` flag.
+
 ## Generated Folder Structure
 
 The component folder looks contains these files:
 
-- `my-component-name.component.scss`
+- `my-component-name.component.(s)css`
 - `my-component-name.component.(js|ts)x`
 - `my-component-name.container.(js|ts)x`
 - `index.(js|ts)`
@@ -69,7 +73,8 @@ An example `rg.config.json` file:
 ```json
 {
   "dir": "client/src/components",
-  "type": "ts"
+  "type": "ts",
+  "style": "scss"
 }
 ```
 

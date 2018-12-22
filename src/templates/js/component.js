@@ -1,10 +1,10 @@
 const { ClassCase } = require('../../helpers');
 
-module.exports = (name) => `/**
+module.exports = (name, style) => `/**
  * ${name}.component
  */
 import React from 'react';
-import './${name}.component.scss';
+import './${name}.component.${style}';
 
 export default ({
   // children,

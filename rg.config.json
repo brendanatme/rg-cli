@@ -1,4 +1,5 @@
 {
   "dir": "examples",
-  "type": "ts"
+  "type": "ts",
+  "style": "scss"
 }
